@@ -56,6 +56,69 @@ Which outputs:
      'AST_TOV',
      'STL_TOV']
 
+Add in columns and show all columns using pandas library
+```python
+df_cols = ['Year', 'Season_type'] + table_headers
+pd.DataFrame(columns=df_cols)
+```
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Season_type</th>
+      <th>PLAYER_ID</th>
+      <th>RANK</th>
+      <th>PLAYER</th>
+      <th>TEAM_ID</th>
+      <th>TEAM</th>
+      <th>GP</th>
+      <th>MIN</th>
+      <th>FGM</th>
+      <th>FGA</th>
+      <th>FG_PCT</th>
+      <th>FG3M</th>
+      <th>FG3A</th>
+      <th>FG3_PCT</th>
+      <th>FTM</th>
+      <th>FTA</th>
+      <th>FT_PCT</th>
+      <th>OREB</th>
+      <th>DREB</th>
+      <th>REB</th>
+      <th>AST</th>
+      <th>STL</th>
+      <th>BLK</th>
+      <th>TOV</th>
+      <th>PF</th>
+      <th>PTS</th>
+      <th>EFF</th>
+      <th>AST_TOV</th>
+      <th>STL_TOV</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+
+
 ---
 
 ## Other Projects
