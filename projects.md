@@ -66,7 +66,7 @@ df_cols = ['Year', 'Season_type'] + table_headers
 pd.DataFrame(columns=df_cols)
 ```
 
-We also want to add in our headers so that we can determine the ```year``` and ```season_type``` (regular season or playoffs). Using pandas, let's see what our headers will look like:
+We also want to add in our headers so that we can determine the ```year``` and ```season_type``` (regular season or playoffs). Using pandas neat ```DataFrame``` data structure, let's see what our headers will look like:
 
 <div>
 <table border="1" class="dataframe">
@@ -110,7 +110,7 @@ We also want to add in our headers so that we can determine the ```year``` and `
 </table>
 </div>
 
-Take API Call Request
+### Get API Request Headers
 ```python
 headers = {
     'accept': '*/*',
@@ -130,8 +130,9 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36'
 }
 ```
+This dictionary looks extremely confusing, but you don't need to know all of this information to complete this task. This is called a request/response header. It provides additional info to the server when making the API call. Once you locate the API call on [NBA.com](https://www.nba.com), find the request/response header section, and merely copy it into python and format correctly into a dictionary.
 
-Using API call, gather the data using pandas library
+### Gathering the Data
 ```python
 df = pd.DataFrame(columns=df_cols)
 season_types = ['Regular%20Season', 'Playoffs']
@@ -156,6 +157,7 @@ for y in years:
 print(f'Process completed! Total run time: {round((time.time()-begin_loop)/60,2)}')
 df.to_excel('nba_player_data.xlsx', index=False)
 ```
+This is the main part of the project: where I actually gather all the data that we pulled via API requests. We need to define the season_types and years we want included in our data with lists ```season_types, years```. First we manipulate the ```api_url``` to populate with data from year ```y``` and season_type ```s```. Then we request the information, and put said information into a DataFrame ```temp_df1```. We also want to add in our year and season_type as columns in our DataFrame, so we add them into ```temp_df2``` and concatenate both DataFrames into ```temp_df3```. Once we get this information, we add it to our main DataFrame ```df``` and continue to add to ```df``` for all iterations. There is also a time element that plays into account. API requests are sometimes done by shady people, so to combat that, companies have limited other's access to their data, and check for bots. To not appear "botty", we introduce a ```lag``` to wait to make the next request. I also print out information as reassurance during iterations to ensure we have gained successful access to the data, as well as a timestamp to show how long the process took:
 
     Finished scraping data for the 2014-15 Regular%20Season.
     ...waiting 12.8 seconds
@@ -199,7 +201,7 @@ df.to_excel('nba_player_data.xlsx', index=False)
     ...waiting 6.6 seconds
     Process completed! Total run time: 4.39
 
-Example of what our data looks like
+### Example of ```df``` DataFrame
 
 <div>
 <table border="1" class="dataframe">
