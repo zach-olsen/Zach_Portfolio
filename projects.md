@@ -3,7 +3,9 @@
 Here are some of the projects I've worked on:
 
 ## NBA Statistics Data Analysis
+
 #### [Project Link](./notebooks/NBAStatsScraping.ipynb)
+---
 In this project, I wanted to get accurate NBA player statistics through the years, and be able to analyze various statistics. In this first part, I am scraping the data from [nba.com](https://www.nba.com) from the years 2014-2023 for all players in the regular season, and the playoffs. I will go through my notebook, and explain what each individual cell is doing.
 
 # Imports
