@@ -18,7 +18,7 @@ import time
 import numpy as np
 ```
 # Fetching NBA Data via API
-We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```python r``` 
+We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r``` 
 ```python
 test_url = 'https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=Totals&Scope=S&Season=2023-24&SeasonType=Regular%20Season&StatCategory=PTS'
 r = requests.get(url=test_url).json()
