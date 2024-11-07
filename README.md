@@ -18,6 +18,7 @@ Automated Financial Systems (AFS)
 - Monitored global servers to ensure functionality was running correctly
 - Created and modified excel sheets of data to clean up SolarWinds software and remove any excess or unnecessary information
 - Constructed various web pages to better organize data and allow managers easy access to said data
+
 ### Projects
 NBA Data Analysis
 
