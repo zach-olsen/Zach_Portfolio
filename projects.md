@@ -10,6 +10,7 @@ In this project, I wanted to get accurate NBA player statistics through the year
 
 # Imports
 To start off any good project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/) libraries. For more information, feel free to click their names to be redirected to their respective websites.
+
 ```python
 import pandas as pd
 import requests # data scripting
@@ -17,18 +18,18 @@ pd.set_option('display.max_columns', None) # so we can see all columns in a wide
 import time
 import numpy as np
 ```
+
 # Fetching NBA Data via API
-We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r``` 
+We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r```, and print them to the screen.
+
 ```python
 test_url = 'https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=Totals&Scope=S&Season=2023-24&SeasonType=Regular%20Season&StatCategory=PTS'
 r = requests.get(url=test_url).json()
 table_headers = r['resultSet']['headers']
-```
-Example of headers
-```python
 print(table_headers)
 ```
-Which outputs:
+
+Output:
 
     ['PLAYER_ID',
      'RANK',
