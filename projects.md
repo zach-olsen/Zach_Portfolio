@@ -25,7 +25,8 @@ Example of headers
 ```python
 print(table_headers)
 ```
-Which outputs
+Which outputs:
+
     ['PLAYER_ID',
      'RANK',
      'PLAYER',
