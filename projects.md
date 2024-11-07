@@ -8,9 +8,7 @@ Here are some of the projects I've worked on:
 ---
 In this project, I wanted to get accurate NBA player statistics through the years, and be able to analyze various statistics. In this first part, I am scraping the data from [nba.com](https://www.nba.com) from the years 2014-2023 for all players in the regular season, and the playoffs. I will go through my notebook, and explain what each individual cell is doing.
 
-# Imports
-To start off any good project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/) libraries. For more information, feel free to click their names to be redirected to their respective websites.
-
+### Imports
 ```python
 import pandas as pd
 import requests # data scripting
@@ -19,15 +17,17 @@ import time
 import numpy as np
 ```
 
-# Fetching NBA Data via API
-We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r```, and print them to the screen.
+To start off any good project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/) libraries. For more information, feel free to click their names to be redirected to their respective websites.
 
+### Fetching NBA Data via API
 ```python
 test_url = 'https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=Totals&Scope=S&Season=2023-24&SeasonType=Regular%20Season&StatCategory=PTS'
 r = requests.get(url=test_url).json()
 table_headers = r['resultSet']['headers']
 print(table_headers)
 ```
+
+We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r```, and print them to the screen.
 
 Output:
 
@@ -60,11 +60,13 @@ Output:
      'AST_TOV',
      'STL_TOV']
 
-Add in columns and show all columns using pandas library
+### Adding Extra Columns
 ```python
 df_cols = ['Year', 'Season_type'] + table_headers
 pd.DataFrame(columns=df_cols)
 ```
+
+We also want to add in our headers so that we can determine the ```year``` and ```season_type``` (regular season or playoffs). Using pandas, let's see what our headers will look like:
 
 <div>
 <table border="1" class="dataframe">
