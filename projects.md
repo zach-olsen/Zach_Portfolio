@@ -3,11 +3,11 @@
 Here are some of the projects I've worked on:
 
 ## NBA Statistics Data Analysis
-
+# [Project Link](./notebooks/NBAStatsScraping.ipynb)
 In this project, I wanted to get accurate NBA player statistics through the years, and be able to analyze various statistics. In this first part, I am scraping the data from [nba.com](https://www.nba.com) from the years 2014-2023 for all players in the regular season, and the playoffs. I will go through my notebook, and explain what each individual cell is doing.
 
 # Imports
-To start off any project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/).
+To start off any good project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/) libraries. For more information, feel free to click their names to be redirected to their respective websites.
 ```python
 import pandas as pd
 import requests # data scripting
@@ -15,8 +15,8 @@ pd.set_option('display.max_columns', None) # so we can see all columns in a wide
 import time
 import numpy as np
 ```
-
-Request url api call
+# Fetching NBA Data via API
+We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then add 
 ```python
 test_url = 'https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=Totals&Scope=S&Season=2023-24&SeasonType=Regular%20Season&StatCategory=PTS'
 r = requests.get(url=test_url).json()
