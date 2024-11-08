@@ -411,4 +411,64 @@ These statistics are irrelevant to what I will be doing. ```'RANK'``` is to dete
 ```python
 data['season_start_year'] = data['Year'].str[:4].astype(int)
 ```
-This changes the ```'Year'``` from format "2015-16" to "2015" by taking the first four characters of the string.
+We add in a new header ```'season_start_year'``` that changes the ```'Year'``` from format "2015-16" to "2015" by taking the first four characters of the string.
+
+```python
+data['Season_type'].replace('Regular%20Season', 'RS', inplace=True)
+```
+We change the header ```'Season_type'``` if it is labeled ```'Regular%20Season'``` (as seen in the sample of data above), we want to change it to ```'RS'```.
+
+```python
+rs_df = data[data['Season_type']=='RS']
+playoffs_df = data[data['Season_type']=='Playoffs']
+```
+Here, we create two different dataFrames, ```rs_df``` for data during the regular season, and ```playoffs_df``` for data during the playoffs.
+
+```python
+data.columns
+```
+Finally, we can see all of our columns/headers:
+    
+    Index(['Year', 'Season_type', 'PLAYER_ID', 'PLAYER', 'TEAM_ID', 'TEAM', 'GP',
+           'MIN', 'FGM', 'FGA', 'FG_PCT', 'FG3M', 'FG3A', 'FG3_PCT', 'FTM', 'FTA',
+           'FT_PCT', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF',
+           'PTS', 'AST_TOV', 'STL_TOV', 'season_start_year'],
+          dtype='object')
+
+---
+
+### Which Player Stats are Correlated with Each Other?
+
+```python
+total_cols = ['MIN', 'FGM', 'FGA', 'FG3M', 'FG3A', 'FTM', 'FTA',
+              'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS']
+```
+
+To start off, we want to limit the columns/headers we are looking at.
+
+```python
+data_per_min = data.groupby(['PLAYER', 'PLAYER_ID', 'Year'])[total_cols].sum().reset_index()
+for col in data_per_min.columns[4:]:
+    data_per_min[col] = data_per_min[col]/data_per_min['MIN']
+
+data_per_min['FG%'] = data_per_min['FGM']/data_per_min['FGA']
+data_per_min['3PT%'] = data_per_min['FG3M']/data_per_min['FG3A']
+data_per_min['FT%'] = data_per_min['FTM']/data_per_min['FTA']
+data_per_min['FG3A%'] = data_per_min['FG3A']/data_per_min['FGA']
+data_per_min['PTS/FGA'] = data_per_min['PTS']/data_per_min['FGA']
+data_per_min['FG3m/FGM'] = data_per_min['FG3M']/data_per_min['FGM']
+data_per_min['FTA/FGA'] = data_per_min['FTA']/data_per_min['FGA']
+data_per_min['TRU%'] = 0.5*data_per_min['PTS']/(data_per_min['FGA']+0.475*data_per_min['FTA'])
+data_per_min['AST_TOV'] = data_per_min['AST']/data_per_min['TOV']
+
+data_per_min = data_per_min[data_per_min['MIN']>=50]
+data_per_min.drop(columns='PLAYER_ID', inplace=True)
+
+fig = px.imshow(data_per_min.corr())
+
+fig.show()
+```  
+  In this cell, I process NBA player data to calculate a set of per-minute statistics, shooting efficiencies, and performance ratios. Also, it filters out players with low playing time, and then creates a correlation heatmap to show relationships between these metrics.  
+  First, we want to group the data by ```'PLAYER', 'PLAYER_ID', 'Year'```. It is important that ```'PLAYER_ID'``` is included in case there is two players with the same name.  
+  Then, we get the sum of all player data based on the columns in ```total_cols```. We then iterate through the ```data_per_min``` columns (excluding the first 4 columns which are unnecessary: ```PLAYER, PLAYER_ID, Year, MIN```), and average all the stats based on a "per-minute" basis.  
+  We then create all new headers 
