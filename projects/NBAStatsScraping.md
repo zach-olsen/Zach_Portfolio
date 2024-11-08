@@ -18,6 +18,8 @@ import numpy as np
 
 To start off any good project, it is important to import necessary libraries. This project imports [pandas](https://pandas.pydata.org/), [requests](https://pypi.org/project/requests/), [time](https://docs.python.org/3/library/time.html), and [numpy](https://numpy.org/) libraries. For more information, feel free to click their names to be redirected to their respective websites.
 
+---
+
 ### Fetching NBA Data via API
 ```python
 test_url = 'https://stats.nba.com/stats/leagueLeaders?LeagueID=00&PerMode=Totals&Scope=S&Season=2023-24&SeasonType=Regular%20Season&StatCategory=PTS'
@@ -58,6 +60,8 @@ Output:
      'EFF',
      'AST_TOV',
      'STL_TOV']
+
+---
 
 ### Adding Extra Columns
 ```python
@@ -109,6 +113,8 @@ Add in the headers so that we can determine the ```year``` and ```season_type```
 </table>
 </div>
 
+---
+
 ### Get API Request Headers
 ```python
 headers = {
@@ -130,6 +136,8 @@ headers = {
 }
 ```
 This dictionary looks extremely confusing, but you don't need to know all of this information to complete this task. This is called a request/response header. It provides additional info to the server when making the API call. Once you locate the API call on [NBA.com](https://www.nba.com), find the request/response header section, and merely copy it into python and format correctly into a dictionary.
+
+---
 
 ### Gathering the Data
 ```python
@@ -199,6 +207,8 @@ This is the main part of the project: where I actually gather all the data that 
     Finished scraping data for the 2023-24 Playoffs.
     ...waiting 6.6 seconds
     Process completed! Total run time: 4.39
+
+---
 
 ### Final Product: Example of ```df``` DataFrame
 
