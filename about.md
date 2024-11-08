@@ -1,3 +1,8 @@
+## Navigation
+- [Home](README.md)
+- [Projects](projects.md)
+- [About](about.md)
+
 ### About
 ---
 
