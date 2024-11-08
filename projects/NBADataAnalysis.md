@@ -479,3 +479,4 @@ fig.show()
   It is crucial that we don't have any outliers. For example, we don't want to include a player who scored 3 points, but only played 1 minute. This would skew our data, so we ensure that the players played at least 50 minutes. We can also drop the ```'PLAYER_ID'``` column to simplify the final display.  
   Finally, we print out a correlation matrix, demonstrated with a heatchart:
 ![alt text](../assets/img/NBADataAnalysis_11_1.png?raw=true)
+Analyzing this chart, we see that the diagonal from the top left to the bottom right is all 1, because it is correlating a statistic to itself. I want to look at a couple of specific statistic correlations that I find interesting.
