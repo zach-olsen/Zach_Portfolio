@@ -479,4 +479,14 @@ fig.show()
   It is crucial that we don't have any outliers. For example, we don't want to include a player who scored 3 points, but only played 1 minute. This would skew our data, so we ensure that the players played at least 50 minutes. We can also drop the ```'PLAYER_ID'``` column to simplify the final display.  
   Finally, we print out a correlation matrix, demonstrated with a heatchart:
 ![alt text](../assets/img/NBADataAnalysis_11_1.png?raw=true)
-Analyzing this chart, we see that the diagonal from the top left to the bottom right is all 1, because it is correlating a statistic to itself. I want to look at a couple of specific statistic correlations that I find interesting.
+For a little more information, the higher the number on the heatchart, the higher the correlation. When the number on the heatchart is positive, there is a positive correlation between the two statistics, and vice versa, when the number on the heatchart is negative, there is a negative correlation between the two statistics. Analyzing this chart, we see that the diagonal from the top left to the bottom right is all 1, because it is correlating a statistic to itself. I want to look at a couple of specific statistic correlations that I find interesting.
+
+#### PTS/Min vs. FGM/Min
+Let's start with an easy one to wrap our head around this heatchart.
+![alt text](../assets/img/PTS_FGM.png?raw=true)
+  This heatchart shows the correlation between points per minute and field goals made per minute. The correlation, represented by ```color``` is 0.958389. This number shows how positive a correlation these two statistics have. When we take a step back and think about it, it makes sense that these stats are positively correlated. In order for a player to score a lot of points, he can get points in three ways: 2-point field goals, 3-point field goals, and free throws, which means that 2 out of the 3 ways a player can score is by making field goals (FGM).  
+  We can find the coefficient of determination to quantify how much one stat can be explained by a relationship with another stat. The formula is ```r^2```where ```r``` is out correlation coefficient: 0.958389. We find ```r^2``` to be roughly 0.9185. This means that 91.85% of the variation in points scored can be explained by the number of field goals made.  
+
+#### REB/Min vs. AST/Min
+Now, let's take a look at two statistics that are not generally associated with the same player: rebounds and assists.
+![alt_text](../assets/img/REB_AST.png)
