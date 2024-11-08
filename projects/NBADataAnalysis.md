@@ -406,8 +406,9 @@ data.sample(10)
 ```python
 data.drop(columns=['RANK','EFF'], inplace=True)
 ```
-These statistics are irrelevant to what I will be doing. ```'RANK'``` is to determine the player's rank in the specific statistic that you search on [nba.com](https://www.nba.com). ```'EFF'``` is a statistic that is calculated using other statistics with the formula: EFF = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
+These statistics are irrelevant to what I will be doing. ```'RANK'``` is to determine the player's rank in the specific statistic that you search on [nba.com](https://www.nba.com). ```'EFF'``` is a statistic that is calculated using other statistics with the formula: ```EFF = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP```.
 
 ```python
 data['season_start_year'] = data['Year'].str[:4].astype(int)
 ```
+This changes the ```'Year'``` from format "2015-16" to "2015" by taking the first four characters of the string.
