@@ -400,3 +400,14 @@ data.sample(10)
 
 ---
 
+### Data Cleaning & Analysis Preparation
+#### The following tasks clean up the data and get rid of any imperfections:
+
+```python
+data.drop(columns=['RANK','EFF'], inplace=True)
+```
+These statistics are irrelevant to what I will be doing. ```'RANK'``` is to determine the player's rank in the specific statistic that you search on [nba.com](https://www.nba.com). ```'EFF'``` is a statistic that is calculated using other statistics with the formula: EFF = (PTS + REB + AST + STL + BLK − Missed FG − Missed FT - TO) / GP.
+
+```python
+data['season_start_year'] = data['Year'].str[:4].astype(int)
+```
