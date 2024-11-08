@@ -1,3 +1,7 @@
+- [Home](README.md)
+- [Projects](projects.md)
+- [About](about.md)
+
 ## NBA Statistics Data Analysis
 
 #### [Project Link](./notebooks/NBADataAnalysis.ipynb)
