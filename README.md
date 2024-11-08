@@ -1,6 +1,3 @@
-# Data Scientist
-
-## Navigation
 - [Home](#home)
 - [Projects](projects.md)
 - [About](about.md)
