@@ -2,7 +2,7 @@
 
 #### [Project Link](./notebooks/NBAStatsScraping.ipynb)
 ---
-In this project, I wanted to get accurate NBA player statistics through the years, and be able to analyze various statistics. In this first part, I am scraping the data from [nba.com](https://www.nba.com) from the years 2014-2023 for all players in the regular season, and the playoffs. I will go through my notebook, and explain what each individual cell does.
+This part of the project is to simply scrape the data from [nba.com](https://www.nba.com) for all player stats from 2014-2023 in the regular season and the playoffs. In the next part of this project, I will analyze this data in this part.
 
 ### Imports
 ```python
@@ -23,7 +23,7 @@ table_headers = r['resultSet']['headers']
 print(table_headers)
 ```
 
-We need to now get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r```, and print them to the screen.
+Now, I need to get access to the data via an API URL. An API URL is an address that allows others to access data within an API (Application Programming Interface), which allows software programs to communicate and share data. Once we find that URL, we send a GET request to the URL and parses the JSON response. We then extract the headers from ```r```, and print them to the screen.
 
 Output:
 
@@ -62,7 +62,7 @@ df_cols = ['Year', 'Season_type'] + table_headers
 pd.DataFrame(columns=df_cols)
 ```
 
-We also want to add in our headers so that we can determine the ```year``` and ```season_type``` (regular season or playoffs). Using pandas neat ```DataFrame``` data structure, let's see what our headers will look like:
+Add in the headers so that we can determine the ```year``` and ```season_type``` (regular season or playoffs). Using pandas neat ```DataFrame``` data structure, let's see what our headers will look like:
 
 <div>
 <table border="1" class="dataframe">
@@ -153,7 +153,7 @@ for y in years:
 print(f'Process completed! Total run time: {round((time.time()-begin_loop)/60,2)}')
 df.to_excel('nba_player_data.xlsx', index=False)
 ```
-This is the main part of the project: where I actually gather all the data that we pulled via API requests. We need to define the season_types and years we want included in our data with lists ```season_types, years```. First we manipulate the ```api_url``` to populate with data from year ```y``` and season_type ```s```. Then we request the information, and put said information into a DataFrame ```temp_df1```. We also want to add in our year and season_type as columns in our DataFrame, so we add them into ```temp_df2``` and concatenate both DataFrames into ```temp_df3```. Once we get this information, we add it to our main DataFrame ```df``` and continue to add to ```df``` for all iterations. There is also a time element that plays into account. API requests are sometimes done by shady people, so to combat that, companies have limited other's access to their data, and check for bots. To not appear "botty", we introduce a ```lag``` to wait to make the next request. I also print out information as reassurance during iterations to ensure we have gained successful access to the data, as well as a timestamp to show how long the process took:
+This is the main part of the project: where I actually gather all the data that was pulled via API requests. Initially, I need to define the season_types and years that should be included in the data with lists ```season_types, years```. First, manipulate the ```api_url``` to populate with data from year ```y``` and season_type ```s```. Then request the information, and put said information into a DataFrame ```temp_df1```. It's important that our year and season_type as columns in our DataFrame, so they get added into ```temp_df2``` and then, concatenate both DataFrames into ```temp_df3```. Once we get this information, finally add it to our main DataFrame ```df``` and continue to add to ```df``` for all iterations. There is also a time element that plays into account. API requests are sometimes done by bots, so to combat that, companies have bot detectors in order to limit other's access to their data and check for bots. To not appear "botty", a ```lag``` is introduced to wait to make the next request. I also print out information as reassurance during iterations to ensure we have gained successful access to the data, as well as a timestamp to show how long the process took:
 
     Finished scraping data for the 2014-15 Regular%20Season.
     ...waiting 12.8 seconds
@@ -197,7 +197,7 @@ This is the main part of the project: where I actually gather all the data that 
     ...waiting 6.6 seconds
     Process completed! Total run time: 4.39
 
-### Example of ```df``` DataFrame
+### Final Product: Example of ```df``` DataFrame
 
 <div>
 <table border="1" class="dataframe">
