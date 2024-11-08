@@ -1,8 +1,9 @@
-## NBA Statistics Data Analysis
+## NBA Statistics Data Scraping
 
 #### [Project Link](./notebooks/NBAStatsScraping.ipynb)
 ---
 This part of the project is to simply scrape the data from [nba.com](https://www.nba.com) for all player stats from 2014-2023 in the regular season and the playoffs. In the next part of this project, I will analyze this data in this part.
+#[Link to Part 2](/NBADataAnalysis)
 
 ### Imports
 ```python
