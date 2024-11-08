@@ -478,4 +478,4 @@ fig.show()
   We then create all new headers ```'FG%', '3PT%', 'FT%', 'FG3A%', 'PTS/FGA', 'FG3m/FGM', 'FTA/FGA', 'TRU%', 'AST_TOV'```. Most of these are straightforward, but I want to discuss ```'TRU%'```. True shooting percentage is calculated: Points / (2 * (Field Goals Attempted + 0.44 * Free Throws Attempted)). It is a more accurate way to calculate a player's shooting than looking at field goal percentage, free throw percentage, and three-point field goal percentage separately.
   It is crucial that we don't have any outliers. For example, we don't want to include a player who scored 3 points, but only played 1 minute. This would skew our data, so we ensure that the players played at least 50 minutes. We can also drop the ```'PLAYER_ID'``` column to simplify the final display.  
   Finally, we print out a correlation matrix, demonstrated with a heatchart:
-![](./assets/img/NBADataAnalysis_11_2.png)
+![](./assets/img/NBADataAnalysis_11_1.png)
