@@ -5,6 +5,8 @@
 This part of the project is to simply scrape the data from [nba.com](https://www.nba.com) for all player stats from 2014-2023 in the regular season and the playoffs. In the next part of this project, I will analyze this data in this part.
 #### [Link to Part 2](NBADataAnalysis.md)
 
+---
+
 ### Imports
 ```python
 import pandas as pd
