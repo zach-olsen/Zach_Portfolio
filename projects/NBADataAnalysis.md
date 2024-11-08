@@ -489,4 +489,4 @@ Let's start with an easy one to wrap our head around this heatchart.
 
 #### REB/Min vs. AST/Min
 Now, let's take a look at two statistics that are not generally associated with the same player: rebounds and assists.
-![alt_text](../assets/img/REB_AST.png)
+![alt_text](../assets/img/REB_AST.png?raw=true)
