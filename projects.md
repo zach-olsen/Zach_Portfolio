@@ -1,5 +1,5 @@
 ## Navigation
-- [Home](#home)
+- [Home](README.md)
 - [Projects](projects.md)
 - [About](about.md)
   
