@@ -497,7 +497,7 @@ For those who aren't as familiar with the game of basketball, an assist is given
 
 #### TRU%/Min vs. PTS/FGA/Min
 Here is another easier one to comprehend: true shooting percentage per minute vs. points per field goal attempt per minute
-![alt text](../assets/img/TRU%_PTS:FGA.png?raw=true)
+![alt text](../assets/img/TRU_PTSFGA.png?raw=true)
 True shooting percentage, defined above is an advanced statistic that measures a player's efficiency. The formula is: True shooting = Points / (2 * (Field Goals Attempted + 0.44 * Free Throws Attempted)). Points per field goal attempt is calculated simply by dividing points from field goal attempts. We see the correlation between the two statistics is extremely positive at 0.8985978. This makes sense since points is in the numerator of the true shooting percentage formula, and field goal attempts are in the denominator. So when we get more points than field goal attempts, the ```PTS/FGA``` statistic increases, and the ```TRU%``` statistic would increase since the numerator is increasing, and the denominator is decreasing.  
 With a correlation of 0.8985978 between true shooting percentage and points per field goal attempt, we find the coefficient of determination to be ```0.8985978^2``` which is roughly 0.8075. This means that 80.75% of the variation in true shooting percentage per minute can be explained by points per field goal attempt per minute.
 
@@ -508,7 +508,7 @@ A personal foul is a violation of the NBA rules that happens when a player makes
   We expect this relationship to be positive, and we can see that we are correct, with a correlation of 0.420338. By squaring the correlation of 0.420338, we find the coefficient of determination to be 0.1767, meaning that 17.67% of the variation in personal fouls per minute can be explained by blocks per minute.
 #### FG3A/Min vs. FG%/Min
 Finally, I want to take a lok at the correlation between 3-point field goals attempted per minute and field goal percentage per minute
-![alt text](../assets/img/FG3A_FG%.png?raw=true)
+![alt text](../assets/img/FG3A_FGP.png?raw=true)
 3-point field goals have been extremely popular in the NBA recently. With the rise of 3-point connoisseur Stephen Curry, this decade shows the rise of the love for the 3-point line. 3-point field goal attempts per game have increased over the last decade. While 3-point shots do reward more points than a regular field goal shot (2 points), they are further away, and therefore much more difficult shots. Before true shooting percentage, field goal percentage was the best way to quantify a player's efficiency. This statistic is simply field goals made divided by field goal attempts.  
   We find that the correlation between field goal 3-point attempts per minute and field goal percentage per minute is -0.5246738. When we square this correlation, we find the coefficient of determination to be roughly 0.2753, meaning that 27.53% of the variation in field goal 3-point attempts per minute can be explained by field goal percentage per minute.  
   The correlation between the two is negative, which makes sense. 3-point shots are a great deal more difficult than regular field goals, so when a player attempts more 3-pointers, they will miss at a greater rate than when shooting regular field goals, resulting in a lwoer field goal percentage. 
