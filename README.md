@@ -4,4 +4,4 @@
 
 ---
 ## Home
-Welcome to my portfolio website! Here is a brief introduction.
+Welcome to my portfolio website!
