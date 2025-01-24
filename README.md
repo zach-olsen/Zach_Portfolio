@@ -4,4 +4,4 @@
 
 ---
 ## Home
-Welcome to my portfolio website!
+Welcome to my portfolio website! Click any of the above tabs for more information!
