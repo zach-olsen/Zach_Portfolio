@@ -19,3 +19,9 @@ In this project, I wanted to get accurate NBA player statistics through the year
 ### [NBA Statistics Data Analysis](NBADataAnalysis.md)
 In the second part of this project, I take the data scraped from part 1 and analyze said data. How are stats correlated? How are minutes distributed? How has the game changed over the past 10 years? What's the difference between regular season and playoffs? All these questions will be answered in this project.
 ##### [Notebook Code](./notebooks/NBADataAnalysis.ipynb)
+
+
+
+## [AI Ethics Paper](paper.md)
+This was a final paper I had to write for my Artifical Intelligence class at Ursinus College. I wrote my paper about restricting generative-AI music.
+
