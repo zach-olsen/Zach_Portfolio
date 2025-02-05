@@ -1,6 +1,5 @@
 - [Home](#home)
 - [Projects](projects.md)
-- [About](about.md)
 
 ---
 ## Home
