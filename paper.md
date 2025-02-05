@@ -1,3 +1,8 @@
+- [Home](README.md)
+- [Projects](projects.md)
+- [About](about.md)
+
+
 Restricting Generative-AI Music  
 By: Zach Olsen  
 December 2023
