@@ -1,9 +1,8 @@
-- [Home](#home)
-- [Projects](projects.md)
+
 
 ---
 ## Home
-Welcome to my portfolio website! Click any of the above tabs for more information!
+Welcome to my portfolio website! Click any of the above tabs for more information! Click this link "[Projects](projects.md)" to see my projects or read a little more about me below! 
 
 ### About
 ---
