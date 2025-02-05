@@ -6,7 +6,7 @@
 ## Restricting Generative-AI Music  
 #### Zach Olsen  
 #### December 2023
-
+-------------------
 **Introduction**  
 	Over the past couple of years, artificial intelligence has taken over the world of technology. With new and improving machines, we are able to do things with artificial intelligence that 20 years ago, we could never imagine we would be able to do. With the advancements in the artificial intelligence field, we can now generate music simply using AI on sites like Boomy, Loudly, Soundraw, etc. Music in AI has been a very controversial topic in its short span of existence. While AI models seem like the future, there have been a lot of ethical dilemmas tied to the field, and understanding where to draw the line. There are constant discussions of whether or not generative music should be classified as “music” because it is not created by a human. Another huge topic of discussion on the ethics of AI music is copyright issues, going both ways: using another artist as an input to the machine, and the user copyrighting “his”/”her” music. 
 
