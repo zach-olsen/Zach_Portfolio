@@ -3,7 +3,7 @@
 - [About](about.md)
 
 
-## Restricting Generative-AI Music  
+### Restricting Generative-AI Music  
 #### Zach Olsen  
 #### December 2023
 -------------------
