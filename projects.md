@@ -1,6 +1,5 @@
 - [Home](README.md)
 - [Projects](projects.md)
-- [About](about.md)
   
 # Projects
 Here are some projects that I have worked on either in school, or in my free time.
